@@ -18,11 +18,30 @@ body {
   background-color: red;
   animation-name: movingBox;
   animation-duration: 5s;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1 /*infinite*/;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
 
+.myball{
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-sizing: content-box;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 100%;
+  background-color: aqua;
+  animation-name: movingBall;
+  animation-duration: 8.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+}
+.myball2{
+  animation-direction: alternate;
+}
 /*
   good:
     'transform' uses a RenderLayer so the GPU calculates the position
@@ -37,6 +56,18 @@ body {
   50%  { background-color:rgb(64, 224, 208); left: calc(100% - 200px); top: calc(100% - 200px); border-radius: 50%; }
   75%  { background-color:rgb(147, 112, 216); left: 0; top: calc(100% - 200px); }
   100% { background-color:rgb(255, 0, 0); left: 0px; top: 0px; }
+}
+
+@keyframes movingBall {
+  0%      { background-color:rgb(255, 0, 0); right: 0px; top: 0px; }
+  12.5%   { background-color:rgb(166, 255, 0); right: calc((100% - 100px)/2); top: calc((100% - 100px)/2); }
+  25%     { background-color:rgb(255, 165, 0); right: 0px; top: calc(100% - 100px); }
+  37.5%   { background-color:rgb(255, 0, 0); left: 0px; top: calc(100% - 100px); }
+  50%     { background-color:rgb(67, 85, 245); left: calc((100% - 100px)/2); top: calc((100% - 100px)/2) }
+  62.5%   { background-color:rgb(247, 0, 255); left: 0px; top: 0px; }
+  75%     { background-color:rgb(247, 6, 6); left: calc(100% / 3); top: calc(100% - 100px); }
+  82.5%   { background-color:rgb(0, 247, 255); left: calc((100% / 3)*2); top: 0px; }
+  100%    { background-color:rgb(255, 0, 170); left: calc((100% / 3)+30%); top: calc(100% - 100px); }
 }
 
 @keyframes backgroundChange {
@@ -59,3 +90,4 @@ a:visited {
 a:hover {
   color: #333;
 }
+/* done */
